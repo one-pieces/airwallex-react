@@ -1,0 +1,15 @@
+:root {
+  --op-popup-background: #fff;
+}
+
+.op-popup {
+  position: fixed;
+  z-index: 1;
+}
+.op-popup--center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  background: var(--op-popup-background);
+}
