@@ -1,7 +1,7 @@
 
 
 .op-input {
-  margin-bottom: 10px
+  margin-bottom: 10px;
 }
 .op-input--error .op-input__input {
   border: 1px solid red;
@@ -9,6 +9,7 @@
 }
 .op-input__input {
   width: 100%;
+  padding: 0 10px;
   box-sizing: border-box;
   line-height: 36px;
 }

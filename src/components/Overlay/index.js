@@ -14,3 +14,9 @@ export function Overlay({ children, show, onClick, duration }) {
     </div>
   )
 }
+
+Overlay.defaultProps = {
+  show: false,
+  onClick: () => {},
+  duration: 0.3
+}

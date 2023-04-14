@@ -4,7 +4,7 @@ import './index.css'
 
 export function Popup(props) {
   console.log('popup')
-  const { children, show, position = 'center', onClose } = props
+  const { children, show, position, onClose } = props
   const OverlayMemo = useMemo(() => {
     return (
       <Overlay show={show} onClick={onClose}></Overlay>
@@ -28,4 +28,10 @@ export function Popup(props) {
       {renderPopup()}
     </>
   )
+}
+
+Popup.defaultProps = {
+  show: false,
+  position: 'center',
+  onClose: () => {}
 }

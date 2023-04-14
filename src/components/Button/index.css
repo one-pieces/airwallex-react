@@ -1,0 +1,68 @@
+:root {
+  --op-button-radius: 4px;
+  --op-button-border-width: 1px;
+  --op-button-padding: 0 15px;
+  --op-button-loading-icon-size: 25px;
+  --op-button-default-height: 44px;
+  --op-button-default-font-size: 14px;
+  --op-button-default-line-height: 1.2;
+
+  --op-button-default-color: #323233;
+  --op-button-default-background: #fff;
+  --op-button-default-border-color: #dcdee0;
+  --op-button-primary-color: #fff;
+  --op-button-primary-background: #1989fa;
+  --op-button-primary-border-color: #1989fa;
+
+  --op-button-disabled-opacity: 0.5;
+}
+
+.op-button {
+  border: none;
+
+  display: inline-block;
+  box-sizing: border-box;
+  height: var(--op-button-default-height);
+  margin: 0;
+  padding: var(--op-button-padding);
+  font-size: var(--op-button-default-font-size);
+  line-height: var(--op-button-default-line-height);
+  text-align: center;
+  border-radius: var(--op-button-radius);
+  cursor: pointer;
+}
+.op-button--default {
+  color: var(--op-button-default-color);
+  background: var(--op-button-default-background);
+  border: var(--op-button-border-width) solid
+    var(--op-button-default-border-color);
+}
+.op-button--primary {
+  color: var(--op-button-primary-color);
+  background: var(--op-button-primary-background);
+  border: var(--op-button-border-width) solid
+    var(--op-button-primary-border-color);
+}
+.op-button--block {
+  display: block;
+  width: 100%;
+}
+.op-button--disabled {
+  cursor: not-allowed;
+  opacity: var(--op-button-disabled-opacity);
+}
+
+.op-button__content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.op-button__loading {
+  color: inherit;
+  font-size: inherit;
+}
+.op-button__loading, .op-loading__spinner {
+  color: currentColor;
+  width: var(--op-button-loading-icon-size);
+  height: var(--op-button-loading-icon-size);
+}
