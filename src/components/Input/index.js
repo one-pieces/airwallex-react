@@ -4,7 +4,7 @@ import './index.css'
 
 export const Input = memo(forwardRef(function Input(props, ref) {
   const { value, name, onChange, rules, placeholder } = props
-  console.log('input', name, value)
+  // console.log('input', name, value)
 
   const inputValue = useRef(value)
   const [errmsg, setErrmsg] = useState('')
@@ -66,7 +66,7 @@ export const Input = memo(forwardRef(function Input(props, ref) {
   return (
     <div className={`op-input ${errmsg ? 'op-input--error' : ''}`}>
       <input className='op-input__input' value={value} placeholder={placeholder} onChange={onInput}></input>
-      <div className='op-input__errmsg'>{errmsg}</div>
+      { errmsg && <div className='op-input__errmsg'>{errmsg}</div> }
     </div>
   )
 }))

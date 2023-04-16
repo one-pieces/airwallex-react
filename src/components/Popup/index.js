@@ -1,37 +1,22 @@
-import { useMemo } from 'react'
-import { Overlay } from '../Overlay'
 import './index.css'
 
-export function Popup(props) {
-  console.log('popup')
-  const { children, show, position, onClose } = props
-  const OverlayMemo = useMemo(() => {
-    return (
-      <Overlay show={show} onClick={onClose}></Overlay>
-    )
-  }, [show, onClose])
-
-  const renderPopup = () => {
-    if (!show) {
-      return
-    }
-    return (
-      <div className={`op-popup op-popup--${position}`}>
-        {children}
-      </div>
-    )
-  }
+export const Popup = function Popup(props, ref) {
+  // console.log('popup')
+  const { children, position, onClose } = props
 
   return (
     <>
-      {OverlayMemo}
-      {renderPopup()}
+      <div className="op-overlay" onClick={onClose}></div>
+      <div className={`op-popup op-popup--${position}`}>
+        <div className='op-popup__content'>
+          {children}
+        </div>
+      </div>
     </>
   )
 }
 
 Popup.defaultProps = {
-  show: false,
   position: 'center',
   onClose: () => {}
 }

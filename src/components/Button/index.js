@@ -4,7 +4,7 @@ import './index.css'
 
 export function Button(props) {
   const { children, loading, loadingText, type, block, onClick, disabled: _disabled } = props
-  console.log('button')
+  // console.log('button')
 
   const [disabled, setDisabled] = useState(_disabled)
   useEffect(() => {

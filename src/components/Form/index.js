@@ -3,8 +3,9 @@ import { FormProvider, useForm } from './context'
 function FormInstance(props) {
   const { children, onSubmit: _onSubmit } = props
   const formContext = useForm()
-  console.log('form')
+  // console.log('form')
   const onSubmit = (e) => {
+    console.log('======result=====')
     // 默认阻止默认行为
     e.preventDefault()
     // 如果 form.items.length 不为空，则需要校验每个 item 的 validator
