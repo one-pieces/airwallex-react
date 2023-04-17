@@ -12,7 +12,9 @@ export function Button(props) {
   }, [loading])
 
   const className = useMemo(() => {
-    return `${props.className ?? ''} op-button op-button--${type} ${block ? 'op-button--block' : ''} ${disabled ? 'op-button--disabled' : ''}`
+    return `${props.className ?? ''} op-button op-button--${type} ${
+      block ? 'op-button--block' : ''
+    } ${disabled ? 'op-button--disabled' : ''}`
   }, [type, block, disabled, props.className])
 
   const hanldeClick = (e) => {
@@ -24,17 +26,15 @@ export function Button(props) {
   }
   return (
     <button className={className} onClick={hanldeClick}>
-      <div className='op-button__content'>
-        {
-          loading ? 
-            (
-              <>
-                <Loading className='op-button__loading' size={20}></Loading>
-                <span>{loadingText}</span>
-              </>
-            ) 
-            : children
-        }
+      <div className="op-button__content">
+        {loading ? (
+          <>
+            <Loading className="op-button__loading" size={20}></Loading>
+            <span>{loadingText}</span>
+          </>
+        ) : (
+          children
+        )}
       </div>
     </button>
   )
@@ -46,5 +46,5 @@ Button.defaultProps = {
   loading: false,
   block: false,
   disabled: false,
-  onClick: () => {}
+  onClick: () => {},
 }

@@ -5,11 +5,14 @@ export const sendInvitation = ({ name, email }, token) => {
   //   name,
   //   email
   // })
-  return send({
-    method: 'post',
-    url: 'https://l94wc2001h.execute-api.ap-southeast-2.amazonaws.com/prod/fake-auth',
-    params: { name, email }
-  }, token)
+  return send(
+    {
+      method: 'post',
+      url: 'https://l94wc2001h.execute-api.ap-southeast-2.amazonaws.com/prod/fake-auth',
+      params: { name, email },
+    },
+    token
+  )
 }
 
 export const send = ({ url, method, params }, token) => {
@@ -26,7 +29,7 @@ export const send = ({ url, method, params }, token) => {
       resolve(response)
     }
     xhr.timeout = 8000
-    xhr.onerror= (e) => {
+    xhr.onerror = (e) => {
       reject(e)
     }
     xhr.send(JSON.stringify(params))

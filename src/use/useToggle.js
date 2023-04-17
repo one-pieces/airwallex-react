@@ -3,7 +3,7 @@ import { useCallback, useState } from 'react'
 export const useToggle = (init) => {
   const [state, setState] = useState(init)
 
-  const toggle= useCallback(() => {
+  const toggle = useCallback(() => {
     setState(!state)
   }, [state])
 

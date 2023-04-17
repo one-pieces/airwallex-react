@@ -16,6 +16,6 @@ test('renders Input', () => {
   expect(input.placeholder).toBe(placeholder)
 
   const changedValue = 'tester'
-  fireEvent.change(input, {target: {value: changedValue}})
+  fireEvent.change(input, { target: { value: changedValue } })
   expect(handleChange).toHaveBeenCalledTimes(1)
 })

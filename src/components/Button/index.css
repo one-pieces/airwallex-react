@@ -34,14 +34,12 @@
 .op-button--default {
   color: var(--op-button-default-color);
   background: var(--op-button-default-background);
-  border: var(--op-button-border-width) solid
-    var(--op-button-default-border-color);
+  border: var(--op-button-border-width) solid var(--op-button-default-border-color);
 }
 .op-button--primary {
   color: var(--op-button-primary-color);
   background: var(--op-button-primary-background);
-  border: var(--op-button-border-width) solid
-    var(--op-button-primary-border-color);
+  border: var(--op-button-border-width) solid var(--op-button-primary-border-color);
 }
 .op-button--block {
   display: block;
@@ -61,7 +59,8 @@
   color: inherit;
   font-size: inherit;
 }
-.op-button__loading, .op-loading__spinner {
+.op-button__loading,
+.op-loading__spinner {
   color: currentColor;
   width: var(--op-button-loading-icon-size);
   height: var(--op-button-loading-icon-size);

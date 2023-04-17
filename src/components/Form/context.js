@@ -9,9 +9,7 @@ export function FormProvider({ children }) {
 
   return (
     <FormContext.Provider value={form}>
-      <FormDispatchContext.Provider value={dipstach}>
-        { children }
-      </FormDispatchContext.Provider>
+      <FormDispatchContext.Provider value={dipstach}>{children}</FormDispatchContext.Provider>
     </FormContext.Provider>
   )
 }
@@ -25,13 +23,13 @@ export function useFormDisptach() {
 }
 
 function formReducer(form, action) {
-  switch(action.type) {
+  switch (action.type) {
     case 'addItem': {
       form.items.push(action.item)
       break
     }
     case 'removeItem': {
-      const index = form.items.findIndex(v => v.name === action.name)
+      const index = form.items.findIndex((v) => v.name === action.name)
       form.items.splice(index, 1)
       break
     }
@@ -41,5 +39,5 @@ function formReducer(form, action) {
 }
 
 const initForm = {
-  items: []
+  items: [],
 }

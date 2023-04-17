@@ -8,9 +8,7 @@ export const Popup = function Popup(props, ref) {
     <>
       <div className="op-overlay" onClick={onClose}></div>
       <div className={`op-popup op-popup--${position}`}>
-        <div className='op-popup__content'>
-          {children}
-        </div>
+        <div className="op-popup__content">{children}</div>
       </div>
     </>
   )
@@ -18,5 +16,5 @@ export const Popup = function Popup(props, ref) {
 
 Popup.defaultProps = {
   position: 'center',
-  onClose: () => {}
+  onClose: () => {},
 }

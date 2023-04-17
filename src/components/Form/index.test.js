@@ -12,13 +12,13 @@ test('renders Form submit success', () => {
       validator: (v) => {
         // Fullname 至少 3 个字符
         return v.length >= 3
-      }
-    }
+      },
+    },
   ]
 
   const { container } = render(
     <Form onSubmit={handleSubmit}>
-      <Input value={'test'} placeholder='name' rules={nameRules} />
+      <Input value={'test'} placeholder="name" rules={nameRules} />
       <Button>submit</Button>
     </Form>
   )
@@ -32,7 +32,6 @@ test('renders Form submit success', () => {
   expect(handleSubmit).toHaveBeenCalledTimes(1)
 })
 
-
 test('renders Form submit fail', () => {
   const handleSubmit = jest.fn()
   const nameRules = [
@@ -42,13 +41,13 @@ test('renders Form submit fail', () => {
       validator: (v) => {
         // Fullname 至少 3 个字符
         return v.length >= 3
-      }
-    }
+      },
+    },
   ]
 
   const { container } = render(
     <Form onSubmit={handleSubmit}>
-      <Input value={'te'} placeholder='name' rules={nameRules} />
+      <Input value={'te'} placeholder="name" rules={nameRules} />
       <Button>submit</Button>
     </Form>
   )
