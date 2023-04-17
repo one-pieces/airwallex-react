@@ -1,10 +1,19 @@
 import { useEffect, useMemo, useState } from 'react'
 import classnames from 'classnames'
 import { Loading } from '../Loading'
-import './index.css'
+import './index.scss'
 
 export function Button(props) {
-  const { children, loading, loadingText, type, block, onClick, disabled: _disabled } = props
+  const {
+    children,
+    loading,
+    loadingText,
+    loadingType,
+    type,
+    block,
+    onClick,
+    disabled: _disabled,
+  } = props
   // console.log('button')
 
   const [disabled, setDisabled] = useState(_disabled)
@@ -32,7 +41,7 @@ export function Button(props) {
       <div className="op-button__content">
         {loading ? (
           <>
-            <Loading className="op-button__loading" size={20}></Loading>
+            <Loading className="op-button__loading" size={20} type={loadingType}></Loading>
             <span>{loadingText}</span>
           </>
         ) : (
@@ -46,6 +55,7 @@ export function Button(props) {
 Button.defaultProps = {
   type: 'default',
   loadingText: '',
+  loadingType: undefined,
   loading: false,
   block: false,
   disabled: false,

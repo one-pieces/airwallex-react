@@ -1,0 +1,22 @@
+.op-input {
+  margin-bottom: 10px;
+
+
+  &--error {
+    .op-input__input {
+      border: 1px solid red;
+      outline: none;
+    }
+  }
+  &__input {
+    width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+    line-height: 36px;
+  }
+  &__errmsg {
+    text-align: left;
+    font-size: 14px;
+    color: red;
+  }
+}

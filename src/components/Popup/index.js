@@ -1,5 +1,5 @@
 import { createPortal } from 'react-dom'
-import './index.css'
+import './index.scss'
 
 function PopupIn(props) {
   // console.log('popup')

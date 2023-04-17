@@ -1,7 +1,7 @@
 import { memo, useRef, useState, forwardRef, useImperativeHandle, useEffect, useMemo } from 'react'
 import classnames from 'classnames'
 import { useFormDisptach } from '../Form/context'
-import './index.css'
+import './index.scss'
 
 export const Input = memo(
   forwardRef(function Input(props, ref) {

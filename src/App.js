@@ -3,7 +3,7 @@ import { Button } from './components/Button'
 import { InvitePopup } from './InvitePopup'
 import { ResultPopup } from './ResultPopup'
 import { useToggle } from './use/useToggle'
-import './App.css'
+import './App.scss'
 
 function App() {
   console.log('app')

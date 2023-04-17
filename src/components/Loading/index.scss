@@ -1,0 +1,90 @@
+:root {
+  --op-loading-spinner-color: #c8c9cc;
+  --op-loading-spinner-size: 30px;
+  --op-loading-spinner-duration: 0.8s;
+}
+
+.op-loading {
+  display: inline-block;
+  color: var(--op-loading-spinner-color);
+
+  &__spinner {
+    position: relative;
+    display: inline-block;
+    width: var(--op-loading-spinner-size);
+    height: var(--op-loading-spinner-size);
+    animation: op-rotate var(--op-loading-spinner-duration) linear infinite;
+
+    &--spinner {
+      animation-timing-function: steps(12);
+    }
+
+    &--circular {
+      animation-duration: 2s;
+    }
+  }
+  &__circular {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    circle {
+      animation: op-circular 1.5s ease-in-out infinite;
+      stroke: currentColor;
+      stroke-width: 3;
+      stroke-linecap: round;
+    }
+  }
+  &__line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    &::before {
+      display: block;
+      width: 2px;
+      height: 25%;
+      margin: 0 auto;
+      background-color: currentColor;
+      border-radius: 40%;
+      content: ' ';
+    }
+  }
+}
+
+@keyframes op-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes op-circular {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+  }
+
+  50% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -40;
+  }
+
+  100% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -120;
+  }
+}
+
+$i: 1;
+@while ($i <= 12) {
+  .van-loading__line--#{$i} {
+    transform: rotate($i * 30deg);
+    opacity: calc(1 - (0.75 / 12) * ($i - 1));
+  }
+  $i: $i + 1;
+}
