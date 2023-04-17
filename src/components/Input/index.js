@@ -1,4 +1,5 @@
 import { memo, useRef, useState, forwardRef, useImperativeHandle, useEffect, useMemo } from 'react'
+import classnames from 'classnames'
 import { useFormDisptach } from '../Form/context'
 import './index.css'
 
@@ -9,6 +10,12 @@ export const Input = memo(
 
     const inputValue = useRef(value)
     const [errmsg, setErrmsg] = useState('')
+
+    const className = useMemo(() => {
+      return classnames(props.className, 'op-input', {
+        'op-input--error': errmsg,
+      })
+    }, [errmsg, props.className])
     const output = useMemo(() => {
       return {
         name,
@@ -69,7 +76,7 @@ export const Input = memo(
     }
 
     return (
-      <div className={`op-input ${errmsg ? 'op-input--error' : ''}`}>
+      <div className={className}>
         <input
           className="op-input__input"
           value={value}

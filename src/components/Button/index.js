@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
+import classnames from 'classnames'
 import { Loading } from '../Loading'
 import './index.css'
 
@@ -12,9 +13,11 @@ export function Button(props) {
   }, [loading])
 
   const className = useMemo(() => {
-    return `${props.className ?? ''} op-button op-button--${type} ${
-      block ? 'op-button--block' : ''
-    } ${disabled ? 'op-button--disabled' : ''}`
+    return classnames('op-button', props.className, {
+      [`op-button--${type}`]: type,
+      'op-button--block': block,
+      'op-button--disabled': disabled,
+    })
   }, [type, block, disabled, props.className])
 
   const hanldeClick = (e) => {
