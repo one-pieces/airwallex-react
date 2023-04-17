@@ -19,3 +19,15 @@ test('renders Popup', () => {
   fireEvent.click(container.querySelector('.op-overlay'))
   expect(handleClose).toHaveBeenCalledTimes(1)
 })
+
+test('renders Popup using container', () => {
+  const handleClose = jest.fn()
+
+  const { container } = render(
+    <Popup onClose={handleClose} container={document.body}>
+      <div>test</div>
+    </Popup>
+  )
+
+  expect(container.parentElement).toBe(document.body)
+})

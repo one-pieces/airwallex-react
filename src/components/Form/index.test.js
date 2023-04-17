@@ -28,8 +28,10 @@ test('renders Form submit success', () => {
   expect(screen.queryByText('Full name needs to be at least 3 characters long')).toBeFalsy()
   expect(screen.getByText('submit')).toBeTruthy()
 
+  // 点击 submit
   fireEvent.click(screen.getByText('submit'))
   expect(handleSubmit).toHaveBeenCalledTimes(1)
+  expect(screen.queryByText('Full name needs to be at least 3 characters long')).toBeFalsy()
 })
 
 test('renders Form submit fail', () => {
@@ -54,9 +56,11 @@ test('renders Form submit fail', () => {
 
   expect(container.querySelector('form')).toBeTruthy()
   expect(screen.getByPlaceholderText('name')).toBeTruthy()
-  // expect(screen.getByText('Full name needs to be at least 3 characters long')).toBeTruthy()
+  expect(screen.queryByText('Full name needs to be at least 3 characters long')).toBeFalsy()
   expect(screen.getByText('submit')).toBeTruthy()
 
+  // 点击 submit
   fireEvent.click(screen.getByText('submit'))
   expect(handleSubmit).toHaveBeenCalledTimes(0)
+  expect(screen.getByText('Full name needs to be at least 3 characters long')).toBeTruthy()
 })
