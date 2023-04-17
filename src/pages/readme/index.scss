@@ -1,3 +1,9 @@
 .readme-page {
   margin: 50px 100px;
+
+  display: flex;
+  .flex {
+    flex: 1;
+    padding-right: 50px;
+  }
 }
