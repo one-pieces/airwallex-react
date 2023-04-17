@@ -1,6 +1,6 @@
 import { useState, forwardRef, useImperativeHandle } from 'react'
-import { Button } from './components/Button'
-import { Popup } from './components/Popup'
+import { Button } from 'components/Button'
+import { Popup } from 'components/Popup'
 
 export const ResultPopup = forwardRef(function ResultPopup(props, ref) {
   const [shown, setShown] = useState(false)
