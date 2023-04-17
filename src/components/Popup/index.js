@@ -1,6 +1,7 @@
+import { createPortal } from 'react-dom'
 import './index.css'
 
-export const Popup = function Popup(props, ref) {
+function PopupIn(props) {
   // console.log('popup')
   const { children, position, onClose } = props
 
@@ -14,7 +15,16 @@ export const Popup = function Popup(props, ref) {
   )
 }
 
+export function Popup(props) {
+  const { container } = props
+  if (container) {
+    return createPortal(<PopupIn {...props} />, container)
+  }
+  return <PopupIn {...props} />
+}
+
 Popup.defaultProps = {
   position: 'center',
+  container: null,
   onClose: () => {},
 }

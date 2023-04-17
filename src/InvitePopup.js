@@ -123,7 +123,7 @@ export function InvitePopup(props) {
   // }
 
   return (
-    <Popup onClose={onPopupClose}>
+    <Popup onClose={onPopupClose} container={document.body}>
       <h1>Request an invite</h1>
       <Form onSubmit={onFormSubmit}>
         {NameInputMemo}
