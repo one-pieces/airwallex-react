@@ -1,0 +1,30 @@
+.op-table {
+  // border: 1px solid #000;
+  margin: 100px 300px;
+
+  .op-row {
+    height: 20px;
+    border-bottom: 1px solid #000;
+    display: flex;
+
+    &:first-child {
+      border-top: 1px solid #000;
+    }
+  }
+
+  .op-col {
+    flex: 1;
+    border-right: 1px solid #000;
+
+    &:first-child {
+      border-left: 1px solid #000;
+    }
+
+    &__input {
+      width: 100%;
+      border: none;
+      box-sizing: border-box;
+      outline: none;
+    }
+  }
+}
